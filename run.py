@@ -16,7 +16,7 @@ from utils.page_utils import RegisterForm
 from utils.tracker import UserTracker
 
 
-app = get_app()
+app = get_app()  # This creates the Flask application object
 tracker = UserTracker()
 
 

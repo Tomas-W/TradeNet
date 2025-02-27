@@ -32,5 +32,10 @@ CMD ["gunicorn", "run:app", \
      "--bind=0.0.0.0:8080", \
      "--workers=2", \
      "--timeout=120", \
+     "--worker-tmp-dir=/dev/shm", \
+     "--worker-class=gthread", \
+     "--threads=2", \
+     "--worker-connections=1000", \
+     "--keep-alive=5", \
      "--access-logfile=-", \
      "--error-logfile=-"] 
