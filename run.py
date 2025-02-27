@@ -19,8 +19,9 @@ from utils.tracker import UserTracker
 app = get_app()
 tracker = UserTracker()
 
-@app.route("/up")
-def healthcheck():
+
+@app.route("/health")
+def railway_healthcheck():
     return "OK", 200
 
 @app.route("/", methods=["GET", "POST"])
