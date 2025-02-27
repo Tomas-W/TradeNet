@@ -24,7 +24,8 @@ tracker = UserTracker()
 def railway_healthcheck():
     return "OK", 200
 
-@app.route("/", methods=["GET", "POST"])
+# Alternative health check endpoint that Railway might be looking for
+@app.route("/")
 def index():
     tracker.track_user()    
     register_form = RegisterForm()
@@ -58,8 +59,8 @@ def track_memory():
 
 
 if __name__ == "__main__":
-    debug = os.getenv("DEBUG", "False")
-    port = int(os.getenv("PORT", 5000))
+    debug = os.getenv("DEBUG", "False").lower() == "true"
+    port = int(os.getenv("PORT", 8080))
     app.run(
         host="0.0.0.0",
         port=port,

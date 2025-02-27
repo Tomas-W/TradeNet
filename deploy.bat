@@ -1,5 +1,5 @@
 @echo off
-echo Building and deploying TradeNet to Railway...
+echo Deploying TradeNet to Railway...
 
 REM Check if Railway CLI is installed
 where railway >nul 2>nul
@@ -8,15 +8,11 @@ if %ERRORLEVEL% neq 0 (
     npm i -g @railway/cli
 )
 
-REM Check if logged in to Railway
-railway whoami >nul 2>nul
-if %ERRORLEVEL% neq 0 (
-    railway login
-)
+REM Login to Railway if not already logged in
+railway whoami >nul 2>nul || railway login
 
-REM Build and deploy
-echo Deploying to Railway...
+REM Deploy the application
 railway up
 
-echo Deployment complete! Opening application...
-railway open 
+echo Deployment complete!
+echo Visit the Railway dashboard to check your deployment status and logs. 
