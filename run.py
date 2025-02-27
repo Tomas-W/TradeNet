@@ -59,7 +59,7 @@ def track_memory():
 
 if __name__ == "__main__":
     debug = os.getenv("DEBUG", "False").lower() == "true"
-    port = int(os.getenv("PORT", 5000))
+    port = int(os.getenv("PORT", 8080))  # Default to 8080 to match Dockerfile
     app.run(
         host="0.0.0.0",
         port=port,
