@@ -1,0 +1,217 @@
+body {
+    font-family: var(--system-font);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--black);
+    color: var(--text-white);
+}
+
+#tracking-section {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+#tracking-section.loaded {
+    opacity: 1;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: transparent;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+h1 {
+    color: var(--text-white);
+    border-bottom: 1px solid rgba(190, 190, 190, 0.2);
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin: 20px 0;
+    background: rgba(14, 13, 13, 0.7);
+    border-radius: 5px;
+    overflow: visible;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+table thead {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 185px;
+    z-index: 20;
+    background-color: rgba(14, 13, 13, 0.7);
+}
+
+table thead tr {
+    display: table-row;
+    width: 100%;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(190, 190, 190, 0.1);
+}
+
+th {
+    background-color: rgba(30, 30, 30, 0.8);
+    font-weight: bold;
+    color: var(--text-white);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 185px;
+}
+
+thead tr th:first-child {
+    border-top-left-radius: 5px;
+}
+
+thead tr th:last-child {
+    border-top-right-radius: 5px;
+}
+
+tr:hover {
+    background-color: rgba(40, 40, 40, 0.6);
+}
+
+.error {
+    color: #ff6b6b;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 107, 107, 0.3);
+    border-radius: 4px;
+    background-color: rgba(255, 107, 107, 0.1);
+}
+
+.details-btn {
+    background: rgba(76, 175, 80, 0.8);
+    color: var(--text-white);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.details-btn:hover {
+    background: rgba(76, 175, 80, 1);
+    transform: translateY(-2px);
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+    background-color: var(--black);
+    margin: 15% auto;
+    padding: 25px;
+    border: 1px solid rgba(190, 190, 190, 0.2);
+    border-radius: 5px;
+    width: 80%;
+    max-width: 800px;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.close {
+    color: var(--text-unhovered);
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.close:hover,
+.close:focus {
+    color: var(--text-white);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+pre {
+    background: rgba(30, 30, 30, 0.6);
+    padding: 15px;
+    border-radius: 5px;
+    overflow-x: auto;
+    color: var(--text-white);
+    border: 1px solid rgba(190, 190, 190, 0.1);
+}
+
+.no-data {
+    text-align: center;
+    padding: 40px;
+    font-size: 1.2rem;
+    color: var(--text-unhovered);
+}
+
+.tracking-content {
+    padding: 30px;
+    position: relative;
+    background: repeating-linear-gradient(
+        135deg, 
+        var(--bg-gradient) 0px, 
+        var(--bg-gradient) 350px,
+        transparent 350px, 
+        transparent 450px,
+        var(--bg-gradient) 450px, 
+        var(--bg-gradient) 700px,
+        transparent 700px, 
+        transparent 750px,
+        var(--bg-gradient) 750px, 
+        var(--bg-gradient) 900px
+    );
+}
+
+.tracking-content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg, 
+        var(--bg-gradient) 0px, 
+        var(--bg-gradient) 175px,
+        transparent 175px, 
+        transparent 225px,
+        var(--bg-gradient) 225px, 
+        var(--bg-gradient) 450px,
+        transparent 450px, 
+        transparent 500px,
+        var(--bg-gradient) 500px, 
+        var(--bg-gradient) 750px
+    );
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* Fade effects */
+.fade-up {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, var(--black) 0%, transparent 100%);
+}
+
+.fade-down {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, transparent 0%, var(--black) 100%);
+}

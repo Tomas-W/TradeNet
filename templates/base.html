@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en" style="background: #0e0d0d">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% include "inline_css.html" %}
+
+    <link rel="preload" href="{{ url_for('static', filename='css/settings.css') }}" as="style">
+    <link rel="preload" href="{{ url_for('static', filename='css/base.css') }}" as="style">
+    <link rel="preload" href="{{ url_for('static', filename='css/about.css') }}" as="style">
+    <link rel="preload" href="{{ url_for('static', filename='css/buy.css') }}" as="style">
+    <link rel="preload" href="{{ url_for('static', filename='css/roadmap.css') }}" as="style">
+    <link rel="preload" href="{{ url_for('static', filename='css/tokenomics.css') }}" as="style">
+    <link rel="preload" href="{{ url_for('static', filename='css/test.css') }}" as="style">
+
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ url_for('static', filename='images/favicon16.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ url_for('static', filename='images/favicon32.png') }}">
+
+    <title>{% block title %}{{ C.NAME }}{% endblock %}</title>
+</head>
+
+<body>
+    <header id="site-header">
+        <p class="header-title">{{ C.NAME }}</p>
+    </header>
+
+    <nav id="site-nav">
+        <ul>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#buy" class="nav-link">Buy</a></li>
+            <li><a href="#roadmap" class="nav-link">Roadmap</a></li>
+            <li><a href="#tokenomics" class="nav-link">Tokenomics</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        {% if not admin %}
+            {% include "main.html" %}
+        {% else %}
+            {% include "tracking.html" %}
+        {% endif %}
+    </main>
+
+    <footer class="content-section" id="site-footer">
+        <p>&copy; 2025 {{ C.NAME }}. All rights reserved.</p>
+    </footer>
+    
+    <script defer src="{{ url_for('static', filename='js/base.js') }}"></script>
+</body>
+</html> 

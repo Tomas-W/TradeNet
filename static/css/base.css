@@ -1,0 +1,119 @@
+.bg-roadmap-1 {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        55deg, 
+        var(--bg-gradient) 0px, 
+        var(--bg-gradient) 350px,
+        transparent 350px, 
+        transparent 450px,
+        var(--bg-gradient) 450px, 
+        var(--bg-gradient) 700px,
+        transparent 700px, 
+        transparent 750px,
+        var(--bg-gradient) 750px, 
+        var(--bg-gradient) 900px
+    );
+}
+
+.bg-roadmap-2 {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        -55deg, 
+        var(--bg-gradient) 0px, 
+        var(--bg-gradient) 350px,
+        transparent 350px, 
+        transparent 450px,
+        var(--bg-gradient) 450px, 
+        var(--bg-gradient) 700px,
+        transparent 700px, 
+        transparent 750px,
+        var(--bg-gradient) 750px, 
+        var(--bg-gradient) 900px
+    );
+}
+
+.bg-tokenomics-1 {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        80deg, 
+        var(--bg-gradient) 0px, 
+        var(--bg-gradient) 350px,
+        transparent 350px, 
+        transparent 450px,
+        var(--bg-gradient) 450px, 
+        var(--bg-gradient) 700px,
+        transparent 700px, 
+        transparent 750px,
+        var(--bg-gradient) 750px, 
+        var(--bg-gradient) 900px
+    );
+}
+
+.bg-tokenomics-2 {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        55deg, 
+        var(--bg-gradient) 0px, 
+        var(--bg-gradient) 175px,
+        transparent 175px, 
+        transparent 225px,
+        var(--bg-gradient) 225px, 
+        var(--bg-gradient) 450px,
+        transparent 450px, 
+        transparent 500px,
+        var(--bg-gradient) 500px, 
+        var(--bg-gradient) 750px
+    );
+}
+
+.bg-buy-1 {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg, 
+        var(--bg-gradient) 0px, 
+        var(--bg-gradient) 350px,
+        transparent 350px, 
+        transparent 450px,
+        var(--bg-gradient) 450px, 
+        var(--bg-gradient) 700px,
+        transparent 700px, 
+        transparent 750px,
+        var(--bg-gradient) 750px, 
+        var(--bg-gradient) 900px
+    );
+}
+
+.bg-buy-2 {
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        -75deg, 
+        var(--bg-gradient) 0px, 
+        var(--bg-gradient) 175px,
+        transparent 175px, 
+        transparent 225px,
+        var(--bg-gradient) 225px, 
+        var(--bg-gradient) 450px,
+        transparent 450px, 
+        transparent 500px,
+        var(--bg-gradient) 500px, 
+        var(--bg-gradient) 750px
+    );
+}
+
+#site-footer {
+    padding: 35px 0;
+    text-align: center;
+}
+
+
+@media (max-width: 1350px) {
+    .nav-fade {
+        height: 75px;
+    }
+}

@@ -1,0 +1,87 @@
+{% block about_content %}
+
+    <div class="about" id="about">
+
+        <div class="about-header">
+            <p class="about-title">
+                Stay ahead, stay relaxed.
+            </p>
+            <br>
+            <p class="about-sub-title">
+                TradeNet and its utilities* are designed specifically for the Solana ecosystem.
+                Register now for the closed Beta and get a 1-month free trial on public launch.
+            </p>
+            <p class="br8"></p>
+            <div class="about-points">
+                <p class="about-point br2">» Lightning fast transactions</p>
+                <p class="about-point br2">» MEV free guarantee</p>
+                <p class="about-point br2">» Lowest fees on the market</p>
+            </div>
+            <p class="br8"></p>
+            <p class="about-disclaimer">
+                * Many of our tools are publicly available on <u><b><a href="#">GitHub</a></b></u> for full transparency and scrutiny.
+            </p>
+        </div>
+
+        <div class="about-form">
+            {% if get_flashed_messages() %}
+                <div class="about-flash">
+                    <p>{{ get_flashed_messages()[0] }}</p>
+                </div>
+            {% endif %}
+
+            <div class="info-modal-wrapper">
+                <img src="{{ url_for('static', filename='images/info_dark.webp') }}" class="info-icon" alt="Info">
+                <div class="info-modal">
+                    <p class="br8">
+                        Submitted forms will be reviewed by our team and you will be notified via email if your request is approved.
+                    </p>
+
+                    <p class="br8">
+                        A valid Solana wallet address is required to review trading history and connect to TradeNet.
+                    </p>
+                    <p class="br8">
+                        Once approved, you will be asked to verify ownership of the wallet.
+                    </p>
+                    <p class="br8">
+                        Further details will be provided by mail after registration.
+                    </p>
+                    <p class="br8">
+                    </p>
+                    <p class="br8">
+                    </p>
+                </div>
+            </div>
+
+            <form method="POST" action="" novalidate class="register-form">
+                <div class="form-item">
+                    <div class="input-error-wrapper">
+                        {{ register_form.email(class="form-input-field email-field") }}
+                        {% if register_form.errors["email"] %}
+                            <div class="form-error"><strong>{{ register_form.errors["email"][0] }}</strong></div>
+                        {% endif %}
+                        <div class="form-label">{{ register_form.email.label(class="form-label-color") }}</div>
+                    </div>
+                </div>
+
+                <div class="form-item last-form-item">
+                    <div class="input-error-wrapper">
+                        {{ register_form.wallet(class="form-input-field wallet-field") }}
+                        {% if register_form.errors["wallet"] %}
+                            <div class="form-error"><strong>{{ register_form.errors["wallet"][0] }}</strong></div>
+                        {% endif %}
+                        <div class="form-label">{{ register_form.wallet.label(class="form-label-color") }}</div>
+                    </div>
+                </div>
+
+                {{ register_form.form_type }}
+                {{ register_form.hidden_tag() }}
+                <div class="form-devider"> 
+                    {{ register_form.submit(class="form-btn") }}
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script defer src="{{ url_for('static', filename='js/about.js') }}"></script>
+{% endblock %}

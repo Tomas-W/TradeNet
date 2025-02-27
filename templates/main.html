@@ -1,0 +1,64 @@
+{% block main_content %}
+<div class="wrapper">
+    <div class="bg-about-1 content-section" id="about-section">
+        <div class="bg-about-2">
+            <div class="nav-fade"></div>
+            {% include "about.html" %}
+            <div class="fade-down"></div>
+        </div>
+    </div>
+
+    <div class="mid-fade">
+        <p class="ca">{{ C.CA }}</p>
+    </div>
+
+    <div class="bg-buy-1 content-section" id="buy-section">
+        <div class="bg-buy-2">
+            <div class="fade-up"></div>
+            {% include "buy.html" %}
+            <div class="fade-down"></div>
+        </div>
+    </div>
+
+    <div class="mid-fade">
+        <p class="ca">{{ C.CA }}</p>
+    </div>
+
+    <div class="bg-roadmap-1 content-section" id="roadmap-section">
+        <div class="bg-roadmap-2">
+            <div class="fade-up"></div>
+            {% include "roadmap.html" %}
+            <div class="fade-down"></div>
+        </div>
+    </div>
+
+    <div class="mid-fade">
+        <p class="ca">{{ C.CA }}</p>
+    </div>
+
+    <div class="bg-tokenomics-1 content-section" id="tokenomics-section">
+        <div class="bg-tokenomics-2">
+            <div class="fade-up"></div>
+            {% include "tokenomics.html" %}
+            <div class="fade-down"></div>
+        </div>
+    </div>
+
+    <div class="mid-fade">
+        <p class="ca">{{ C.CA }}</p>
+    </div>
+
+    <div class="bg-test-1 content-section" id="test-section">
+        <div class="bg-test-2">
+            <div class="fade-up"></div>
+            {% include "test.html" %}
+            <div class="fade-down"></div>
+        </div>
+    </div>
+
+    <div class="mid-fade">
+        <p class="ca">{{ C.CA }}</p>
+    </div>
+    
+</div>
+{% endblock %}
