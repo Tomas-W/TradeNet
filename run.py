@@ -7,6 +7,7 @@ from flask import (
     flash, 
     redirect,
     url_for,
+    jsonify
 )
 
 from app import get_app
@@ -17,6 +18,11 @@ from utils.tracker import UserTracker
 
 app = get_app()
 tracker = UserTracker()
+
+@app.route("/health")
+def health_check():
+    """Health check endpoint for Railway deployment"""
+    return jsonify({"status": "healthy"}), 200
 
 @app.route("/", methods=["GET", "POST"])
 def index():
